@@ -1,0 +1,97 @@
+{% load static %}
+<!-- {% static 'website/'%} -->
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+   <head>
+      <!-- Meta -->
+      <title>Daniel Bellfield - Contact</title>
+      <meta charset="UTF-8">
+      <meta name="description" content="Free HTML template">
+      <meta name="keywords" content="HTML, template, free">
+      <meta name="author" content="Nicola Tolin">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- Styles -->
+      <link href="{% static 'website/vendor/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet" type="text/css"/>
+      <link href="{% static 'website/vendor/animate/animate.css'%}" rel="stylesheet" type="text/css"/>
+      <link href="{% static 'website/css/style.css'%}" rel="stylesheet" type="text/css"/>
+   </head>
+   <body>
+      <header>
+         <h1>Daniel Bellfield  <span>- Software Engineer</span> </h1>
+      </header>
+         <div class="new-class">
+            
+            <h2><a  href="{% url 'home' %}">Home</a></h2>
+            
+                              <h2><a href="https://pdfhost.io/v/8AYCVWPwU_Daniel_Bellfield_Resume_2021.pdf" target="_blank">Resume</a></h2>
+                              <h2><a href="https://github.com/dnlbellfield" target="_blank">GitHub</a></h2></h2>
+                              <h2><a href="https://chromium-review.googlesource.com/q/status:merged+%253Cbellfield%253E" target="_blank">Google Code Review</a></h2>
+         </div>
+         
+         <div class="new-class">
+          
+            
+            <!-- <form id="contact" action="{% url 'contact' %}" method="post">
+               {% csrf_token %}
+               <h2>Get In Touch</h2>
+           
+               <fieldset>
+                 <input name="message-name" placeholder="Your name" type="text" tabindex="1" required autofocus>
+               </fieldset>
+               <fieldset>
+                 <input name="message-email" placeholder="Your Email" type="email" tabindex="2" required>
+               </fieldset>
+               <fieldset>
+                 <textarea name="message" placeholder="Your message" tabindex="5" required></textarea>
+               </fieldset>
+               <fieldset>
+                 <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+               </fieldset>
+       
+             </form> -->
+         
+       {% if message_name %}  
+         <center><h3> Thanks, {{message_name}}!</h3>
+            <br>
+         I received your email and will contact you shortly.
+      </center>
+      {% endif %}
+
+      </header>
+       <form id="contact" action="{% url 'contact' %}" method="post">
+         {% csrf_token %}
+         <ul class="form-style-1">
+             <li><label>Name <span class="required">*</span></label><input type="text" name="message-name" class="field-divided" /> </li>
+             <li>
+                 <label>Email <span class="required">*</span></label>
+                 <input type="email" name="message-email" class="field-long" />
+             </li>
+        
+             <li>
+                 <label>Your Message <span class="required">*</span></label>
+                 <textarea name="message" id="field5" class="field-long field-textarea"></textarea>
+             </li>
+             <li>
+                 <input type="submit" value="Submit" />
+             </li>
+         </ul>
+         </form>
+      </div>
+      <!-- Contact -->
+      
+      <!-- End Contact -->
+      <!-- Contact Form -->
+      
+      <!-- End Contact Form -->
+      <!-- Javascript -->
+      <!-- {% static 'website/'%} -->
+      <script src="{% static 'website/vendor/jquery.min.js'%}"></script>
+      <script src="{% static 'website/vendor/bootstrap/js/bootstrap.min.js'%}"></script>
+      <script src="{% static 'website/vendor/wow/wow.js'%}"></script>
+      <script src="{% static 'website/js/script.js'%}"></script>
+      <script>
+         new WOW().init();
+      </script>
+      <!-- End Javascript -->
+   </body>
+</html>
